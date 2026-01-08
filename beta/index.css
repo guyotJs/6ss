@@ -1,0 +1,106 @@
+@keyframes move-left {
+  from { transform: translate(0px, 0px); opacity: 1; }
+  to   { transform: translate(-320px, 0px); opacity: 0.1; }
+}
+@keyframes move-right {
+  from { transform: translate(320px, 0px); opacity: 0; }
+  to   { transform: translate(0px, 0px); opacity: 1; }
+}
+.animate-left{
+  animation: move-left .7s;
+  animation-fill-mode: forwards;
+}
+.animate-right{
+  animation: move-right .7s;
+  animation-fill-mode: forwards;
+}
+button{
+  all:unset;
+}
+
+body.pinstripe {
+  background: #c7ced5
+    url("https://guyotjs.github.io/6ss/bstr.png");
+}
+body {
+  font-family: Helvetica, Arial;
+  -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  width: 320px;
+  margin: 0 auto;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  margin: 0 auto;
+}
+.pager{
+  position:absolute;
+  opacity:0;
+  top:0;
+  transform: translate(320px);
+}
+
+.back{
+  transition: 0.3s;
+  color:grey;
+  font-weight: 900;
+  font-size:12px;
+  background-color: #eee;
+  border-top-left-radius:190px;
+  border-bottom-left-radius:190px;
+  padding:5px;
+  border:1px solid #ccc;
+  position:absolute;
+  top: 50%;
+  transform: translate(10px,-50%);
+}
+.back:hover{
+  background-color: #ddd;
+}
+#home{
+  z-index:100;
+}
+.navbar {
+  position: relative;
+  height: 44px;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-label {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 44px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.box {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 9px;
+  margin: 9px;
+  padding:0;
+  font-size: 16px;
+}
+
+.item{padding:10px; transition:0.3s;width:280px;}
+.item:not(:last-child){border-bottom:1px solid #ccc;}
+
+.item{
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 10px 13px;
+  background-size: 10px 13px;
+  background-image: url("https://guyotjs.github.io/6ss/rarw.png");
+}
+
+.item:last-child {border-bottom-left-radius:9px!important;border-bottom-right-radius:9px!important;}
+.item:first-child {border-top-left-radius:9px!important;border-top-right-radius:9px!important;}
+
+.item:hover{
+  background-color: #eee;
+}
